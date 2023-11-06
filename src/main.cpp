@@ -18,7 +18,7 @@
 #define GREEN_LED3 3
 #define GREEN_LED4 2
 #define SLEEP_TIME 10000
-#define DEBOUNCE_TLR 200
+#define DEBOUNCE_TLR 50
 
 #define T2 2000000
 #define T3 30000
@@ -376,6 +376,10 @@ void loop()
     ledOutput();
     sleepStartTime = millis();
     disableInterrupt(BTN1);
+    disableInterrupt(BTN1);
+    disableInterrupt(BTN2);
+    disableInterrupt(BTN3);
+    disableInterrupt(BTN4);
     enableInterrupt(BTN1, start_game, HIGH);
     break;
   case END:
@@ -387,6 +391,9 @@ void loop()
     ledOutput();
     sleepStartTime = millis();
     disableInterrupt(BTN1);
+    disableInterrupt(BTN2);
+    disableInterrupt(BTN3);
+    disableInterrupt(BTN4);
     enableInterrupt(BTN1, start_game, HIGH);
     break;
   }
